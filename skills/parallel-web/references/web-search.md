@@ -33,13 +33,25 @@ python scripts/google_research.py search "peer-reviewed research on $ARGUMENTS" 
 
 You do not need to run two separate searches. Google's search synthesis already blends academic and general sources; biasing the query string is sufficient.
 
+**Expect mixed sources** for scientific queries — Google may cite journals alongside news sites, company pages, or blogs. Always assess quality before presenting.
+
 ## Response format
 
 1. Present the synthesized markdown output to the user directly. Keep all inline citations intact.
 
-2. **Assess source quality from the `## Sources` section and narrative text** — since URLs are grounding redirects rather than direct publisher links, check whether the source titles and in-text references mention peer-reviewed journals, preprints, or institutional bodies (e.g., "Nature", "PubMed", "arXiv", "NIH", "WHO"). Note the evidence quality to the user:
-   - If academic/institutional sources are clearly present: note this briefly
-   - If coverage appears primarily non-academic: flag it and offer to run a query that explicitly targets scholarly sources
+2. **Source Quality** — required for scientific or technical queries. Read the `## Sources` section and narrative text.
+
+   ```markdown
+   ### Source Quality
+
+   - **Peer-reviewed / preprint / institutional:** [count or estimate]
+   - **News / commercial / other:** [count or estimate]
+   - **Assessment:** [1 sentence — sufficient for the query? flag if mostly non-academic]
+   ```
+
+   - URLs are grounding redirects — assess from **source titles and domain names** (e.g. "Nature", "PubMed", "arXiv", "NIH", "WHO"), not the redirect URL string.
+   - If academic/institutional sources are clearly present: note briefly.
+   - If coverage appears primarily non-academic: **flag it** and offer to run a query that explicitly targets scholarly sources.
 
 3. End by mentioning the output file path (`$FILENAME.md`) so the user knows it's available for follow-up questions.
 

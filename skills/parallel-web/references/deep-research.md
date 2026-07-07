@@ -38,14 +38,38 @@ The script writes a comprehensive markdown report to `$FILENAME.md` and prints i
 
 There is no separate `.json` metadata file or executive summary — the markdown is the complete deliverable.
 
+**Expect mixed sources.** Google deep research often includes peer-reviewed journals *and* commercial supplement sites, health blogs, news outlets, or product pages — especially in practical/clinical sections. Do not assume every source is academic.
+
 ## Response format
 
 **After the command completes:**
 
-1. **Assess source quality** from the `## Sources` section and the narrative text. Since URLs are grounding redirects rather than direct publisher links, assess quality from source titles and in-text mentions (e.g., "Nature", "PubMed", "PMC", "arXiv"). Count roughly how many are peer-reviewed journals/preprints vs. news/blog. Flag to the user if academic coverage is thin and offer a follow-up targeted web search.
+1. **Brief summary** — relay the report's opening summary section (usually `## Summary` or the first paragraph). Do **not** paste the full report into chat.
 
-2. Tell the user the report file path: `$FILENAME.md`
+2. **Source Quality** — required section. Read only the `## Sources` section (and the summary if needed for context). Do **not** read the entire report into context.
 
-3. Ask if the user wants to review the full report. **Do NOT read the file into context unless the user asks** — reports are often 5,000–10,000+ words and will flood the context window.
+   Use this template:
 
-4. Note the `interaction_id` from stderr for potential follow-up queries (visible in stderr output as `[research] interaction_id=...`).
+   ```markdown
+   ### Source Quality
+
+   - **Total sources cited:** ~N
+   - **Peer-reviewed / preprint / clinical-registry** (PubMed, PMC, Nature, MDPI, Frontiers, arXiv, ClinicalTrials.gov, university domains): ~X (~Y%)
+   - **Institutional / government** (NIH, WHO, .gov, .edu pages that are not journal articles): ~X
+   - **News / industry / commercial / blog** (supplement retailers, product pages, health blogs, Wikipedia, YouTube): ~X (~Y%)
+
+   **Assessment:** [1–2 sentences — e.g. "Core mechanistic and clinical claims are grounded in peer-reviewed literature; non-academic sources appear mainly in commercial/product sections." OR "Academic coverage is thin — consider a follow-up targeted search."]
+
+   **Evidence note:** [If &lt;50% academic/institutional, flag explicitly. Note which key claims rely on academic vs non-academic sources.]
+   ```
+
+   Classification rules:
+   - URLs are often grounding redirects — judge from **source titles and domain names** in the `## Sources` list (e.g. `nih.gov`, `mdpi.com`, `justthrivehealth.com`).
+   - Do not read all 100+ sources line-by-line if the list is huge — sample systematically (first 20, middle 20, last 20) or grep for domain patterns, then extrapolate with a clear caveat.
+   - Do not invent counts — if you cannot estimate, say "approximately" and explain your sampling method.
+
+3. **Report file path** — tell the user: `$FILENAME.md`
+
+4. **Offer to read more** — ask if the user wants to review the full report. **Do NOT read the file into context unless the user asks** — reports are often 5,000–10,000+ words.
+
+5. **`interaction_id`** — note from stderr (`[research] interaction_id=...`) for potential follow-up or poll recovery.

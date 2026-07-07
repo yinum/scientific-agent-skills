@@ -39,7 +39,18 @@ Across all capabilities, prefer academic and scientific sources when the query i
 
 When citing academic sources, include author names and publication year where available in addition to the standard citation format.
 
----
+### Google source mix (important)
+
+Unlike research-curated pipelines, **Google Deep Research may return mixed sources** — peer-reviewed journals alongside supplement retailers, health blogs, news sites, and product pages. This is expected API behavior, not a script error.
+
+When presenting Google output to the user:
+
+1. **Always include a Source Quality assessment** (see capability-specific reference files for templates).
+2. **Do not treat all sources as equal evidence** — distinguish peer-reviewed / preprint / clinical-registry sources from commercial or blog sources.
+3. **Flag thin academic coverage** — if roughly less than half of cited sources are academic or institutional, tell the user and note which claims rely mainly on non-academic sources.
+4. **Prefer evidence from academic sources** when summarizing clinical or mechanistic claims.
+
+URLs in Google output are often **grounding redirect wrappers** (`vertexaisearch.cloud.google.com/grounding-api-redirect/...`). Assess source type from the **citation title and domain name** shown in the `## Sources` list, not from the redirect URL string itself.
 
 ## Setup
 
