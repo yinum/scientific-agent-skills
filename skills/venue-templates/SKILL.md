@@ -339,7 +339,6 @@ This skill works seamlessly with other scientific skills:
 - Ensure adherence to reporting guidelines (CONSORT, STROBE, etc.)
 
 ### Research Grants
-- Cross-reference with **research-grants** skill for content strategy
 - Use this skill for agency-specific templates and formatting
 - Combine for comprehensive grant proposal preparation
 

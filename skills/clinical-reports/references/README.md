@@ -203,7 +203,6 @@ The clinical-reports skill integrates seamlessly with:
 - **scientific-writing** - For clear, professional medical writing
 - **peer-review** - For quality assessment of case reports
 - **citation-management** - For literature references in case reports
-- **research-grants** - For clinical trial protocol development
 
 ## Resources
 

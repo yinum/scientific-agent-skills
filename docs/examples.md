@@ -2773,7 +2773,6 @@ Expected Output:
 **Skills Used**:
 - `database-lookup` - Query ClinicalTrials.gov for preliminary data context
 - `paper-lookup` - Search PubMed, OpenAlex for literature and citations
-- `research-grants` - Grant writing templates and guidelines
 - `literature-review` - Systematic literature analysis
 - `hypothesis-generation` - Scientific hypothesis development
 - `scientific-writing` - Technical writing
@@ -2843,7 +2842,6 @@ Step 9: Rigor and reproducibility
 - Authentication of key resources
 
 Step 10: Format and compile
-- Use research-grants templates for NIH format
 - Apply citation-management for references
 - Create biosketch and facilities sections
 - Generate PDF with proper formatting
@@ -3670,7 +3668,7 @@ The examples in this document cover the following skill categories:
 - `scientific-writing`, `scientific-visualization`, `scientific-schematics`, `scientific-slides`, `markdown-mermaid-writing`, `infographics`
 - `clinical-reports`, `clinical-decision-support`, `treatment-plans`
 - `literature-review`, `scientific-critical-thinking`
-- `research-grants`, `peer-review`, `venue-templates`, `iso-13485-certification`
+- `peer-review`, `venue-templates`, `iso-13485-certification`
 - `pdf`, `docx`, `pptx`, `xlsx`, `latex-posters`, `pptx-posters`
 - `citation-management`, `market-research-reports`
 

@@ -920,7 +920,6 @@ Evidence-based treatment planning requires literature support:
 
 Treatment plans may be developed for clinical trials or research studies:
 
-- **Research Grants** (`research-grants` skill): Treatment protocols for funded studies
 - **Clinical Trial Reports** (`clinical-reports` skill): Intervention documentation
 
 ## Common Use Cases
